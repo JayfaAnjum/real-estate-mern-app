@@ -8,7 +8,7 @@ import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
 
-dotenv.config({ path: path.resolve('./api/.env') });
+dotenv.config();
 const __dirname = path.resolve();
 const app = express();
 const PORT = process.env.PORT || 3000;
