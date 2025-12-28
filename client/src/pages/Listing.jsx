@@ -30,7 +30,7 @@ export default function Listing() {
     const fetchListing = async () => {
       try {
         setLoading(true);
-      const res = await fetch(`http://localhost:3000/api/listing/get/${params.listingId}`, {
+      const res = await fetch(`${import.meta.env.VITE_URL}/api/listing/get/${params.listingId}`, {
         method: 'GET',
         credentials: 'include', // ✅ send cookies for session auth
       });

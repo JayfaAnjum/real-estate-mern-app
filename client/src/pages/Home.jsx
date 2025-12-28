@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/listing/get?offer=true&limit=4', {
+        const res = await fetch(`${import.meta.env.VITE_URL}/api/listing/get?offer=true&limit=4`, {
           method: 'GET',
           credentials: 'include',
         }
@@ -29,7 +29,7 @@ export default function Home() {
     };
     const fetchRentListings = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/listing/get?type=rent&limit=4', {
+        const res = await fetch(`${import.meta.env.VITE_URL}/api/listing/get?type=rent&limit=4`, {
           method: 'GET',
           credentials: 'include',
         });
@@ -43,7 +43,7 @@ export default function Home() {
 
     const fetchSaleListings = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/listing/get?type=sale&limit=4', {
+        const res = await fetch(`${import.meta.env.VITE_URL}/api/listing/get?type=sale&limit=4`, {
           method: 'GET',
           credentials: 'include',
         }

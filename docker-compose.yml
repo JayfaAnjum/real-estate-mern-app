@@ -19,6 +19,8 @@ services:
     container_name: frontend
     ports:
       - "3001:80"
+    environment:
+      - VITE_URL=http://localhost:3000
     depends_on:
       - api
     restart: always

@@ -11,7 +11,7 @@ export default function Contact({ listing }) {
   useEffect(() => {
     const fetchLandlord = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/user/${listing.userRef}`, {
+        const res = await fetch(`${import.meta.env.VITE_URL}/api/user/${listing.userRef}`, {
           method: 'GET',
           credentials: 'include',
         });

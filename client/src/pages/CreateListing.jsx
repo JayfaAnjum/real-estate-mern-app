@@ -132,7 +132,7 @@ export default function CreateListing() {
         return setError('Discount price must be lower than regular price');
       setLoading(true);
       setError(false);
-      const res = await fetch('http://localhost:3000/api/listing/create', {
+      const res = await fetch(`${import.meta.env.VITE_URL}/api/listing/create`, {
         method: 'POST',
         credentials: 'include',
         headers: {
