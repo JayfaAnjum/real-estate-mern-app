@@ -1,0 +1,8 @@
+name: MERN CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+    

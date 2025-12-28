@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import path from 'path';
 
 import userRouter from './routes/user.route.js';
@@ -12,6 +13,11 @@ dotenv.config();
 const __dirname = path.resolve();
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(cors({
+  origin: ['http://localhost:3001'], // React dev server or frontend container
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  credentials: true, // if you use cookies
+}));
 
 // Middleware
 app.use(express.json());

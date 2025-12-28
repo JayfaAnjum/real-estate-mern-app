@@ -30,7 +30,10 @@ export default function Listing() {
     const fetchListing = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`/api/listing/get/${params.listingId}`);
+      const res = await fetch(`http://localhost:3000/api/listing/get/${params.listingId}`, {
+        method: 'GET',
+        credentials: 'include', // ✅ send cookies for session auth
+      });
         const data = await res.json();
         if (data.success === false) {
           setError(true);

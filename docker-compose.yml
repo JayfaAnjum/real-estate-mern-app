@@ -1,0 +1,24 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGO=mongodb+srv://saroth:saroth@cluster0.qvckxm3.mongodb.net/realestate?retryWrites=true&w=majority
+      - JWT_SECRET=abcd
+    restart: always
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3001:80"
+    depends_on:
+      - api
+    restart: always
